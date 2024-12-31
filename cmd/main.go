@@ -3,13 +3,20 @@ package main
 import (
 	"fmt"
 	"os"
+	"ascii-art/internal"
+	"ascii-art/config"
 )
 
 func main() {
-	files := os.Args[1:]
-	if len(files) != 2 {
-		fmt.Println("Error: number of arguments")
+	str := os.Args[1]
+	// _ = str
+	if len(os.Args[1:]) != 1 {
+		fmt.Println("Error: no arguments")
 		return
 	}
-	// inp
+	config.Standard = internal.ParsFile("./fonts/standard.txt")
+	config.Shadow = internal.ParsFile("./fonts/shadow.txt")
+	// config.Thinkertoy = internal.ParsFile("./fonts/thinkertoy.txt")
+	internal.PrintStringAscii(str)
+
 }
