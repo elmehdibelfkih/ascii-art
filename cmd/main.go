@@ -9,14 +9,16 @@ import (
 
 func main() {
 	str := os.Args[1]
-	// _ = str
 	if len(os.Args[1:]) != 1 {
 		fmt.Println("Error: no arguments")
 		return
 	}
-	config.Standard = internal.ParsFile("./fonts/standard.txt")
-	config.Shadow = internal.ParsFile("./fonts/shadow.txt")
-	// config.Thinkertoy = internal.ParsFile("./fonts/thinkertoy.txt")
-	internal.PrintStringAscii(str)
+	internal.ParsFile("./fonts/standard.txt", config.Standard)
+	internal.PrintStringAscii(str, config.Standard)
 
+	// internal.ParsFile("./fonts/shadow.txt", config.Shadow)
+	// internal.PrintStringAscii(str, config.Shadow)
+
+// 	internal.ParsFile("./fonts/thinkertoy.txt", config.Thinkertoy)
+// 	internal.PrintStringAscii(str, config.Thinkertoy)
 }
