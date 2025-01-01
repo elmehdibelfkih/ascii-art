@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const Content = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'abcdefjhijklmnopqrstuvwxyz{|}~`
+const Content = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'abcdefghijklmnopqrstuvwxyz{|}~`
 
 var Standard = make(map[rune][]string, len(Content))
 
