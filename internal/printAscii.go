@@ -14,10 +14,7 @@ func ParsFile(fontFileName string, font map[rune][]string) {
 		log.Fatalln(err)
 	}
 	str := strings.Trim(string(data), "\n")
-	println(strings.Count(str, "\n\n"))
 	tmp := strings.Split(str, "\n\n")
-	// println(len(tmp))
-	// println(str)
 	for i, elm := range config.Content {
 		font[elm] = strings.Split(tmp[i], "\n")
 	}
