@@ -13,6 +13,6 @@ func main() {
 		return
 	}
 	str := os.Args[1]
-	internal.ParsFile("./fonts/standard.txt", internal.Standard)
-	internal.PrintStringAscii(str, internal.Standard)
+	internal.ParsFile("./fonts/standard.txt")
+	internal.PrintStringAscii(str)
 }
