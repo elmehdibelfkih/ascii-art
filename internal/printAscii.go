@@ -7,9 +7,7 @@ import (
 	"strings"
 )
 
-const Content = ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'abcdefghijklmnopqrstuvwxyz{|}~`
-
-var Standard = make(map[rune][]string, len(Content))
+var Standard = make(map[rune][]string, 95)
 
 const CharacterHeight = 8
 
@@ -20,10 +18,9 @@ func ParsFile(fontFileName string) {
 	}
 	str := strings.Trim(string(data), "\n")
 	tmp := strings.Split(str, "\n\n")
-	for i, elm := range Content {
-		if i < len(tmp) {
-			Standard[elm] = strings.Split(tmp[i], "\n")
-		}
+	for i, j := 32, 0; i <= 126; i++ {
+		Standard[rune(i)] = strings.Split(tmp[j], "\n")
+		j++
 	}
 }
 
@@ -33,7 +30,7 @@ func PrintStringAscii(str string) {
 		if line != "" {
 			for i := 0; i < CharacterHeight; i++ {
 				for _, c := range line {
-					if strings.Contains(Content, string(c)) && i < len(Standard[c]){
+					if c < 127 && c > 31 && i < len(Standard[c]) {
 						fmt.Print(Standard[c][i])
 					}
 				}
