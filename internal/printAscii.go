@@ -26,7 +26,7 @@ func ParsFile(fontFileName string) {
 
 func PrintStringAscii(str string) {
 	if strings.Trim(str, `\n`) == "" {
-		// fmt.Print(strings.Repeat("\n", strings.Count(str, `\n`)))
+		fmt.Print(strings.Repeat("\n", strings.Count(str, `\n`)))
 		return
 	}
 	tmp := strings.Split(str, `\n`)
