@@ -8,8 +8,8 @@ import (
 
 func main() {
 	if len(os.Args[1:]) != 1 {
-		fmt.Println("Error: number of args not valid")
-		fmt.Println("Usage: go run cmd/. [STRING]")
+		fmt.Fprintf(os.Stderr, "Error: number of args not valid")
+		fmt.Fprintf(os.Stderr, "Usage: go run cmd/. [STRING]")
 		return
 	}
 	str := os.Args[1]
